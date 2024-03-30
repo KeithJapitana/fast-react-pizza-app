@@ -1,13 +1,53 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+@layer base {
+  html {
+    @apply text-[62.5%];
+  }
+
+  body {
+    @apply border-primaryColor min-h-screen border border-b-8 bg-strongWhite p-[3.2rem] py-[6rem] font-normal text-[#252525];
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header {
+  @apply self-stretch;
+}
+
+.header h1 {
+  @apply text-primaryColor relative block w-full text-center text-7xl font-light uppercase;
+}
+.header h1::before,
+.header h1::after {
+  @apply bg-primaryColor absolute top-[calc(50%-1px)] block h-[3px] w-[4rem] content-[''];
+}
+
+.header h1::before {
+  @apply left-0;
+}
+.header h1::after {
+  @apply right-0;
+}
+
+.container {
+  @apply mx-0 my-auto flex max-w-7xl flex-col items-center gap-20;
+}
+
+.menu {
+  @apply flex flex-col items-center gap-16;
+}
+
+.menu h2 {
+  @apply inline-block border border-x-0 border-y-2 border-current px-4 py-0 text-4xl font-normal uppercase tracking-widest;
+}
+.menu p {
+  @apply w-4/5 text-center text-2xl;
+}
+
+.footer {
+  @apply mt-2 flex w-full flex-col items-center justify-center p-5 text-center text-2xl;
 }
