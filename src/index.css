@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply border-primaryColor min-h-screen border border-b-8 bg-strongWhite p-[3.2rem] py-[6rem] font-normal text-[#252525];
+    @apply min-h-screen border border-b-8 border-primaryColor bg-strongWhite p-[3.2rem] py-[6rem] font-normal text-[#252525];
   }
 }
 
@@ -19,11 +19,11 @@
 }
 
 .header h1 {
-  @apply text-primaryColor relative block w-full text-center text-7xl font-light uppercase;
+  @apply relative block w-full text-center text-7xl font-light uppercase text-primaryColor;
 }
 .header h1::before,
 .header h1::after {
-  @apply bg-primaryColor absolute top-[calc(50%-1px)] block h-[3px] w-[4rem] content-[''];
+  @apply absolute top-[calc(50%-1px)] block h-[3px] w-[4rem] bg-primaryColor content-[''];
 }
 
 .header h1::before {
@@ -38,11 +38,11 @@
 }
 
 .menu {
-  @apply flex flex-col items-center gap-16;
+  @apply flex flex-col items-center gap-8;
 }
 
 .menu h2 {
-  @apply inline-block border border-x-0 border-y-2 border-current px-4 py-0 text-4xl font-normal uppercase tracking-widest;
+  @apply inline-block border border-x-0 border-y-0 border-current px-4 py-0 text-4xl font-normal uppercase tracking-widest;
 }
 .menu p {
   @apply w-4/5 text-center text-2xl;
@@ -50,4 +50,82 @@
 
 .footer {
   @apply mt-2 flex w-full flex-col items-center justify-center p-5 text-center text-2xl;
+}
+
+.pizzas {
+  @apply grid grid-cols-2 gap-4;
+  /* list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.8rem; */
+}
+
+.pizza {
+  @apply flex flex-row gap-2;
+  /* display: flex;
+  gap: 3.2rem; */
+}
+
+.pizza img {
+  width: 12rem;
+  aspect-ratio: 1;
+  align-self: start;
+}
+
+.pizza div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 0.4rem 0;
+}
+
+.pizza h3 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.pizza p {
+  font-size: 1.4rem;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: auto;
+}
+
+.pizza span {
+  display: block;
+  font-size: 1.6rem;
+}
+
+.pizza.sold-out {
+  color: #888;
+}
+
+.pizza.sold-out img {
+  filter: grayscale();
+  opacity: 0.8;
+}
+
+/* *************** */
+
+.order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.btn {
+  color: inherit;
+  font-family: inherit;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  background-color: #edc84b;
+  padding: 1.4rem 3.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: #e9bb24;
 }
